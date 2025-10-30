@@ -1,9 +1,11 @@
-import React from 'react'
+import { useGLTF } from "@react-three/drei";
 
-const HackerRoom = () => {
-  return (
-    <div>HackerRoom</div>
-  )
-}
+const HackerRoom = (props: any) => {
+  const { scene } = useGLTF("/models/hacker-room.glb");
+  
+  return <primitive object={scene} {...props} />;
+};
 
-export default HackerRoom
+useGLTF.preload("/models/hacker-room.glb");
+
+export default HackerRoom;
