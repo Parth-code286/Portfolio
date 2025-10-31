@@ -6,7 +6,7 @@ function ReactLogo(props:any) {
   return (
     <Float speed={1} rotationIntensity={1} floatIntensity={1}>
     <group {...props} dispose={null}>
-      <group scale={0.01}>
+      <group scale={0.015}>
         <mesh
           castShadow
           receiveShadow

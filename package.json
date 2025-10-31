@@ -18,6 +18,7 @@
     "framer-motion": "^12.23.24",
     "gsap": "^3.13.0",
     "leva": "^0.10.0",
+    "maath": "^0.10.8",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-responsive": "^10.0.1",
