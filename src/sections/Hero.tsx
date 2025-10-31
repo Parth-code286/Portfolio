@@ -23,12 +23,12 @@ const Hero = () => {
   const scale = isMobile ? 0.05 : isTablet ? 0.07 : isLaptop ? 0.09 : 0.09;
   const sizes = calculateSizes(isLaptop, isMobile, isTablet);
   const position: [number, number, number] = isMobile
-    ? [0.1, -1.0, 0]  // shifted left
+    ? [-0.5, -1.0, 0]  // shifted further left
     : isTablet
-    ? [0.4, -0.8, 0]  // shifted left
+    ? [0, -0.8, 0]     // shifted further left
     : isLaptop
-    ? [-1, -0.7, 0]  // shifted left
-    : [-1, 1, 0]; // shifted left for desktop
+    ? [-1.5, -0.7, 0]  // shifted further left
+    : [-3, 1, 0];      // shifted further left for desktop
 
   return (
     <section className="min-h-screen w-full flex flex-col relative overflow-hidden bg-black">
@@ -146,10 +146,10 @@ const Hero = () => {
 
       {/* ✅ Button BELOW the 3D model */}
       <div className="relative z-10 flex justify-center py-12">
-        <a href="#contact">
+        <a href="#about">
           <Button
             name="Let's work together"
-            isBeamcontainerClass="sm:w-auto w-[250px]"
+            containerClass="sm:w-auto w-[250px]"
           />
         </a>
       </div>
