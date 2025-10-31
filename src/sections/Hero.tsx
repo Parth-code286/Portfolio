@@ -1,10 +1,13 @@
-import { PerspectiveCamera } from "@react-three/drei";
+import { PerspectiveCamera, Ring } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React, { Suspense } from "react";
 import CanvasLoader from "../components/CanvasLoader";
 import HackerRoom from "../components/HackerRoom";
 import { useMediaQuery } from "@react-hook/media-query";
 import Target from "../components/Target";
+import ReactLogo from "../components/ReactLogo";
+import Cube from "../components/Cube";
+import Board from "../components/board";
 
 const Hero = () => {
   // ✅ Responsive breakpoints
@@ -55,20 +58,40 @@ const Hero = () => {
           <Suspense fallback={<CanvasLoader />}>
             <PerspectiveCamera makeDefault position={[0, 5, 15]} />
 
-            {/* ✅ HackerRoom */}
             <HackerRoom
               scale={[scale, scale, scale]}
               position={position}
               rotation={[0.3, 3.1, 0.0]}
             />
 
-            {/* ✅ Target adjusted for all screen sizes */}
-            <group>
-            <Target position={[-9, -1.7, 0]} scale={[0.85,0.85,0.85]} />
-            </group>
+<group>
+  {/* 🟣 Target: bottom-left */}
+  <Target
+    position={[-9, -1.5, 0]}
+    scale={1.2}
+    rotation={[0, Math.PI / 4, 0]}
+  />
 
-            <ambientLight intensity={1} />
-            <directionalLight position={[10, 10, 5]} intensity={0.05} />
+  {/* 🟡 Ring: top-left */}
+  <Ring
+    position={[-9, 8, 0]}
+    scale={[0.75, 0.75, 0.75]}
+  />
+
+  <ReactLogo
+    position={[9, 8, 0]}
+    rotation={[2.6, 0.8, -1.8]}
+    scale={[0.41, 0.41, 0.41]}
+  />
+  <Cube
+    position={[9, -0.7, 0]}
+    rotation={[2.6, 0.8, -1.8]}
+    scale={0.74}
+  />
+</group>
+
+<ambientLight intensity={1.2} />
+<directionalLight position={[10, 10, 5]} intensity={0.5} />
           </Suspense>
         </Canvas>
       </div>

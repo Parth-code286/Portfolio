@@ -1,34 +1,38 @@
+import { Float, useGLTF } from '@react-three/drei';
+import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
-import { useGLTF } from '@react-three/drei';
 import gsap from 'gsap';
-import React, { useRef, useEffect } from 'react';
-import * as THREE from 'three';
+import { Group } from 'three';
 
+interface TargetProps {
+  position?: [number, number, number];
+  rotation?: [number, number, number];
+  scale?: number | [number, number, number];
+}
 
-const Target = (props:any) => {
-  const targetRef = useRef<THREE.Group>(null);
+const Target: React.FC<TargetProps> = (props) => {
+  const targetRef = useRef<Group>(null);
   const { scene } = useGLTF(
     'https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/target-stand/model.gltf'
-  );
+  ) as { scene: Group };
 
-
-  // ✅ Floating animation
   useGSAP(() => {
-    if (targetRef.current) {
-      gsap.to(targetRef.current.position, {
-        y: targetRef.current.position.y + 1,
-        duration: 1.5,
-        yoyo: true,
-        repeat: -1,
-        ease: 'sine.inOut',
-      });
-    }
-  });
+    if (!targetRef.current) return;
+    
+    gsap.to(targetRef.current.position, {
+      y: targetRef.current.position.y + 0.5,
+      duration: 1.5,
+      repeat: -1,
+      yoyo: true,
+    });
+  }, []);
 
   return (
-    <mesh ref={targetRef} {...props} rotate={[0,Math.PI/2,0]} >
+    <Float floatIntensity={2} speed={2}>
+    <group {...props} ref={targetRef}>
       <primitive object={scene} />
-      </mesh>
+    </group>
+    </Float>
   );
 };
 
