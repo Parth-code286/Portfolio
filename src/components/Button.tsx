@@ -2,12 +2,13 @@ import React from "react";
 
 interface ButtonProps {
   name: string;
-  isBeamcontainerClass?: string;
+  isBeam?: boolean;
+  containerClass?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ name, isBeamcontainerClass }) => {
+const Button: React.FC<ButtonProps> = ({ name, isBeam, containerClass = '' }) => {
   return (
-    <div className={`relative ${isBeamcontainerClass || ""}`}>
+    <div className={`relative ${containerClass} ${isBeam ? 'beam-effect' : ''}`.trim()}>
       <button
         className="
           relative

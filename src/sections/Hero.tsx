@@ -28,7 +28,7 @@ const Hero = () => {
     ? [0.4, -0.8, 0]  // shifted left
     : isLaptop
     ? [-1, -0.7, 0]  // shifted left
-    : [-1, -0.7, 0]; // shifted left for desktop
+    : [-1, 1, 0]; // shifted left for desktop
 
   return (
     <section className="min-h-screen w-full flex flex-col relative overflow-hidden bg-black">
@@ -109,7 +109,7 @@ const Hero = () => {
       <Target position={[-12, -2, 0]} scale={1.4} rotation={[0, Math.PI / 4, 0]} />
       <Ring position={[-12, 8, 0]} scale={[0.9, 0.9, 0.9]} />
       <ReactLogo
-        position={[10, 8, 0]}
+        position={[8, 8, 0]}
         rotation={[2.6, 0.8, -1.8]}
         scale={[0.45, 0.45, 0.45]}
       />

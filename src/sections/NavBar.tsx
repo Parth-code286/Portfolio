@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import menuIcon from "../assets/menu.svg";
-import closeIcon from "../assets/close.svg";
+import menuIcon from "../../public/assets/menu.svg";
+import closeIcon from "../../public/assets/close.svg";
 import { navLinks } from "../context/index";
 
 const NavItems = () => {
