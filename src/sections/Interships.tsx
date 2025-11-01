@@ -1,5 +1,5 @@
-import React from "react";
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import { BriefcaseBusiness, CalendarDays, Wallet } from "lucide-react";
 
 // --- DATA ---
@@ -23,7 +23,7 @@ const internshipsData = [
 ];
 
 // --- FRAMER MOTION VARIANTS ---
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -34,14 +34,14 @@ const containerVariants = {
   },
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { y: 50, opacity: 0, scale: 0.95 },
   visible: {
     y: 0,
     opacity: 1,
     scale: 1,
     transition: {
-      type: "spring",
+      type: "spring" as const,
       stiffness: 120,
       damping: 18,
     },

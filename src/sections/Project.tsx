@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from "react";
+import { Suspense, useState } from "react";
 import { myProjects } from "../context";
 import { Canvas } from "@react-three/fiber";
 import CanvasLoader from "../components/CanvasLoader";
@@ -28,13 +28,8 @@ const Project = () => {
         {/* 🔹 Left Section — Project Card */}
         <div className="relative group overflow-hidden pt-19 rounded-2xl shadow-2xl shadow-black/30 hover:shadow-primary/20 transition-all duration-300">
           <div className="relative p-6 bg-gradient-to-b pt-7 from-black/80 to-black">
-            <div className="flex items-center gap-4 mb-3">
-              <div
-                className="p-3 backdrop-blur-2xl rounded-xl border border-white/10 shadow-lg"
-                style={project.logoStyle}
-              ></div>
-              {/* ⬇️ Shifted title slightly left */}
-              <h3 className="text-2xl font-bold text-white ml-[-20px]">{project.title}</h3>
+            <div className="mb-3">
+              <h3 className="text-2xl font-bold text-white">{project.title}</h3>
             </div>
 
             <p className="text-gray-300 mb-4">{project.desc}</p>

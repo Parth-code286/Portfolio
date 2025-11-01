@@ -1,12 +1,11 @@
-import { PerspectiveCamera, Ring } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import React, { Suspense } from "react";
+import { Suspense } from "react";
+import { PerspectiveCamera } from "@react-three/drei";
 import CanvasLoader from "../components/CanvasLoader";
 import HackerRoom from "../components/HackerRoom";
 import { useMediaQuery } from "@react-hook/media-query";
 import HackerCamera from "../components/HackerCamera";
 import Button from "../components/Button";
-import { calculateSizes } from "../context";
 
 const Hero = () => {
   // ✅ Responsive breakpoints
@@ -17,7 +16,6 @@ const Hero = () => {
 
   // ✅ HackerRoom scaling and positioning (shifted left)
   const scale = isMobile ? 0.05 : isTablet ? 0.07 : isLaptop ? 0.09 : 0.09;
-  const sizes = calculateSizes(isLaptop, isMobile, isTablet);
   const position: [number, number, number] = isMobile
     ? [0.5, 3, 0]  // shifted further left
     : isTablet
