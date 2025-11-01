@@ -4,6 +4,7 @@ interface ButtonProps {
   name: string;
   isBeam?: boolean;
   containerClass?: string;
+  onClick?: () => void;
 }
 
 const Button: React.FC<ButtonProps> = ({ name, isBeam, containerClass = '' }) => {

@@ -15,6 +15,7 @@
     "@react-hook/media-query": "^1.1.1",
     "@react-three/drei": "^10.7.6",
     "@react-three/fiber": "^9.4.0",
+    "@studio-freight/lenis": "^1.0.42",
     "@tailwindcss/vite": "^4.1.16",
     "framer-motion": "^12.23.24",
     "gsap": "^3.13.0",

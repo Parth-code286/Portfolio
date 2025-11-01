@@ -11,6 +11,17 @@ import {
   MessageCircle,
 } from "lucide-react";
 
+// ✅ Navbar links used in footer navigation
+const navLinks = [
+  { id: 1, name: "Home", href: "#home" },
+  { id: 2, name: "About", href: "#about" },
+  { id: 3, name: "Skills", href: "#skills" },
+  { id: 4, name: "Projects", href: "#projects" },
+  { id: 5, name: "Internships", href: "#internships" },
+  { id: 6, name: "Education", href: "#educations" },
+  { id: 7, name: "Contact", href: "#contact" },
+];
+
 const Footer = () => {
   return (
     <motion.footer
@@ -27,7 +38,8 @@ const Footer = () => {
             Parth Nandwalkar
           </h2>
           <p className="text-neutral-500 text-sm leading-relaxed max-w-sm">
-            Building creative digital experiences that make a difference. Always learning, always growing, always building.
+            Building creative digital experiences that make a difference. Always
+            learning, always growing, always building.
           </p>
         </div>
 
@@ -105,21 +117,21 @@ const Footer = () => {
             </a>
           </div>
 
-          <div className="flex space-x-6 text-sm text-neutral-500 font-medium">
-            <a href="#home" className="hover:text-white transition-colors duration-200">
-              Home
-            </a>
-            <a href="#work" className="hover:text-white transition-colors duration-200">
-              Work
-            </a>
-            <a href="#contact" className="hover:text-white transition-colors duration-200">
-              Contact
-            </a>
+          {/* ✅ Dynamic NavLinks */}
+          <div className="flex flex-wrap justify-end gap-6 text-sm text-neutral-500 font-medium">
+            {navLinks.map((link) => (
+              <a
+                key={link.id}
+                href={link.href}
+                className="hover:text-white transition-colors duration-200"
+              >
+                {link.name}
+              </a>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Bottom Strip */}
       <div className="border-t border-neutral-900 mt-10 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-neutral-600">
         <p>© {new Date().getFullYear()} Parth Nandwalkar. All rights reserved.</p>
         <p className="flex items-center gap-1 mt-2 sm:mt-0">

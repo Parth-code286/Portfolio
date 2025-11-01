@@ -4,13 +4,9 @@ import React, { Suspense } from "react";
 import CanvasLoader from "../components/CanvasLoader";
 import HackerRoom from "../components/HackerRoom";
 import { useMediaQuery } from "@react-hook/media-query";
-// import Target from "../components/Target";
-// import ReactLogo from "../components/ReactLogo";
-// import Cube from "../components/Cube";
 import HackerCamera from "../components/HackerCamera";
 import Button from "../components/Button";
 import { calculateSizes } from "../context";
-// import Robo from "../components/Robo";
 
 const Hero = () => {
   // ✅ Responsive breakpoints
@@ -23,7 +19,7 @@ const Hero = () => {
   const scale = isMobile ? 0.05 : isTablet ? 0.07 : isLaptop ? 0.09 : 0.09;
   const sizes = calculateSizes(isLaptop, isMobile, isTablet);
   const position: [number, number, number] = isMobile
-    ? [-0.5, -1.0, 0]  // shifted further left
+    ? [0.5, 3, 0]  // shifted further left
     : isTablet
     ? [0, -0.8, 0]     // shifted further left
     : isLaptop
@@ -71,80 +67,13 @@ const Hero = () => {
               />
             </HackerCamera>
 
-            {/* ✅ 3D Elements */}
-{/* ✅ 3D Decorative Models — Responsive Positioning */}
-{/* <group>
-  {isMobile ? (
-    <>
-      <Target position={[-5, -1.2, 0]} scale={0.8} rotation={[0, Math.PI / 4, 0]} />
-      <Cube position={[-5, 5, 0]} scale={[0.6, 0.6, 0.6]} />
-      <ReactLogo
-        position={[4.5, 5, 0]}
-        rotation={[2.6, 0.8, -1.8]}
-        scale={[0.25, 0.25, 0.25]}
-      />
-      <Cube
-        position={[4.5, -0.5, 0]}
-        rotation={[2.6, 0.8, -1.8]}
-        scale={0.55}
-      />
-    </>
-  ) : isTablet ? (
-    <>
-      <Target position={[-8, -1.6, 0]} scale={1.1} rotation={[0, Math.PI / 4, 0]} />
-      <Ring position={[-8, 7, 0]} scale={[0.75, 0.75, 0.75]} />
-      <ReactLogo
-        position={[7, 7, 0]}
-        rotation={[2.6, 0.8, -1.8]}
-        scale={[0.33, 0.33, 0.33]}
-      />
-      <Cube
-        position={[7, -0.7, 0]}
-        rotation={[2.6, 0.8, -1.8]}
-        scale={0.65}
-      />
-    </>
-  ) : isLaptop ? (
-    <>
-      <Target position={[-12, -2, 0]} scale={1.4} rotation={[0, Math.PI / 4, 0]} />
-      <Ring position={[-12, 8, 0]} scale={[0.9, 0.9, 0.9]} />
-      <ReactLogo
-        position={[8, 8, 0]}
-        rotation={[2.6, 0.8, -1.8]}
-        scale={[0.45, 0.45, 0.45]}
-      />
-      <Cube
-        position={[10, -0.8, 0]}
-        rotation={[2.6, 0.8, -1.8]}
-        scale={0.9}
-      />
-    </>
-  ) : (
-    <>
-      <Target position={[-14, -2.2, 0]} scale={1.7} rotation={[0, Math.PI / 4, 0]} />
-      <Ring position={[-14, 9, 0]} scale={[1.05, 1.05, 1.05]} />
-      <ReactLogo
-        position={[12, 9, 0]}
-        rotation={[2.6, 0.8, -1.8]}
-        scale={[0.55, 0.55, 0.55]}
-      />
-      <Cube
-        position={[12, -1, 0]}
-        rotation={[2.6, 0.8, -1.8]}
-        scale={1.05}
-      />
-    </>
-  )}
-</group> */}
 
-            {/* ✅ Lighting */}
             <ambientLight intensity={1.2} />
             <directionalLight position={[10, 10, 5]} intensity={0.5} />
           </Suspense>
         </Canvas>
       </div>
 
-      {/* ✅ Button BELOW the 3D model */}
       <div className="relative z-10 flex justify-center py-12">
         <a href="#about">
           <Button

@@ -21,35 +21,20 @@ const Project = () => {
   };
 
   return (
-    // ⬇️ Reduced top & bottom margins
     <section className="c-space mt-4 mb-8" id="projects">
       <p className="head-text mb-2">My Work</p>
 
-      {/* ⬇️ Removed mt-8, added tighter spacing */}
       <div className="grid lg:grid-cols-2 grid-cols-1 gap-8 w-full items-start">
         {/* 🔹 Left Section — Project Card */}
-        <div className="relative group overflow-hidden rounded-2xl shadow-2xl shadow-black/30 hover:shadow-primary/20 transition-all duration-300">
-          <div className="relative h-22 overflow-hidden">
-            <img
-              src={project.spotlight}
-              alt={project.title}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
-
-          <div className="relative p-6 bg-gradient-to-b from-black/80 to-black">
+        <div className="relative group overflow-hidden pt-19 rounded-2xl shadow-2xl shadow-black/30 hover:shadow-primary/20 transition-all duration-300">
+          <div className="relative p-6 bg-gradient-to-b pt-7 from-black/80 to-black">
             <div className="flex items-center gap-4 mb-3">
               <div
                 className="p-3 backdrop-blur-2xl rounded-xl border border-white/10 shadow-lg"
                 style={project.logoStyle}
-              >
-                <img
-                  src={project.logo}
-                  alt={`${project.title} logo`}
-                  className="w-10 h-10"
-                />
-              </div>
-              <h3 className="text-2xl font-bold text-white">{project.title}</h3>
+              ></div>
+              {/* ⬇️ Shifted title slightly left */}
+              <h3 className="text-2xl font-bold text-white ml-[-20px]">{project.title}</h3>
             </div>
 
             <p className="text-gray-300 mb-4">{project.desc}</p>
@@ -99,7 +84,7 @@ const Project = () => {
                 </group>
               </Suspense>
             </Center>
-            <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
+            <OrbitControls enableZoom={false} enablePan={false} maxPolarAngle={Math.PI / 2} />
           </Canvas>
         </div>
       </div>
