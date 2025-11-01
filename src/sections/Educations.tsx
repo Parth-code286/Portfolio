@@ -1,5 +1,5 @@
-import React from "react";
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import { GraduationCap, Clock } from "lucide-react";
 
 // --- Data ---
@@ -31,7 +31,7 @@ const educationData = [
 ];
 
 // --- Framer Motion Variants ---
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -39,12 +39,16 @@ const containerVariants = {
   },
 };
 
-const itemVariants = (isLeft: boolean) => ({
+const itemVariants = (isLeft: boolean): Variants => ({
   hidden: { opacity: 0, x: isLeft ? -100 : 100 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.8, type: "spring", stiffness: 100 },
+    transition: { 
+      duration: 0.8, 
+      type: "spring" as const, 
+      stiffness: 100 
+    },
   },
 });
 

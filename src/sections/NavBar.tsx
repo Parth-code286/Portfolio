@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import menuIcon from "../../public/assets/menu.svg";
 import closeIcon from "../../public/assets/close.svg";

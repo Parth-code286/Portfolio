@@ -1,8 +1,24 @@
-import React, { useRef } from 'react'
 import { Float, useGLTF } from '@react-three/drei'
+import type { Object3D } from 'three'
 
-function ReactLogo(props:any) {
-  const { nodes, materials } = useGLTF('/models/react.glb')
+interface GLTFResult {
+  nodes: {
+    [key: string]: Object3D & {
+      geometry: any;
+      material?: any;
+    };
+  };
+  materials: {
+    [key: string]: any;
+  };
+}
+
+interface ReactLogoProps {
+  [key: string]: any;
+}
+
+function ReactLogo(props: ReactLogoProps) {
+  const { nodes, materials } = useGLTF('/models/react.glb') as unknown as GLTFResult
   return (
     <Float speed={1} rotationIntensity={1} floatIntensity={1}>
     <group {...props} dispose={null}>

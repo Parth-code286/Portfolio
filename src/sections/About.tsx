@@ -1,24 +1,14 @@
 import React, { useState, useRef } from 'react';
 import Globe from 'react-globe.gl';
-import Button from '../components/Button.jsx';
 
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
-  const [hasDownloaded, setHasDownloaded] = useState(false);
   const downloadLinkRef = useRef<HTMLAnchorElement>(null);
 
   const handleCopy = () => {
     navigator.clipboard.writeText('ramnandwalkar2005@gmail.com');
     setHasCopied(true);
     setTimeout(() => setHasCopied(false), 2000);
-  };
-
-  const handleDownload = () => {
-    if (downloadLinkRef.current) {
-      downloadLinkRef.current.click();
-    }
-    setHasDownloaded(true);
-    setTimeout(() => setHasDownloaded(false), 2000);
   };
 
   return (

@@ -1,21 +1,30 @@
-import React from "react";
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import { GraduationCap, Clock } from "lucide-react";
 
-export const itemVariants = (isLeft) => ({
+interface TimelineCardProps {
+  company: string;
+  role: string;
+  duration: string;
+  description: string;
+  index: number;
+}
+
+export const itemVariants = (isLeft: boolean): Variants => ({
   hidden: { opacity: 0, x: isLeft ? -100 : 100 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.8, type: "spring", stiffness: 100 },
+    transition: { 
+      duration: 0.8, 
+      type: "spring" as const, 
+      stiffness: 100 
+    },
   },
 });
 
-const TimelineCard = ({ company, role, duration, description, index }) => {
+const TimelineCard = ({ company, role, duration, description, index }: TimelineCardProps) => {
   const isLeft = index % 2 === 0;
-
-  // Use a dedicated GraduationCap icon for Education context
-  const icon = <GraduationCap className="w-5 h-5 text-neutral-400" />;
 
   return (
     <motion.div

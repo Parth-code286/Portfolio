@@ -1,9 +1,17 @@
 import { useFrame } from '@react-three/fiber'
 import { easing } from 'maath'
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { Group } from 'three'
 
-const HackerCamera = ({children,isMobile,isTablet,isLaptop,isDesktop}:any) => {
+interface HackerCameraProps {
+  children: React.ReactNode;
+  isMobile: boolean;
+  isTablet?: boolean;
+  isLaptop?: boolean;
+  isDesktop?: boolean;
+}
+
+const HackerCamera = ({ children, isMobile }: HackerCameraProps) => {
     const groupRef = useRef<Group>(null)
     useFrame((state,delta)=>{
         easing.damp3(state.camera.position , [0,5,15],0.25,delta)
