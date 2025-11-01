@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@gsap/react": "^2.1.2",
     "@react-hook/media-query": "^1.1.1",
     "@react-three/drei": "^10.7.6",
@@ -18,11 +19,14 @@
     "framer-motion": "^12.23.24",
     "gsap": "^3.13.0",
     "leva": "^0.10.0",
+    "lucide-react": "^0.552.0",
     "maath": "^0.10.8",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-globe.gl": "^2.36.0",
+    "react-hot-toast": "^2.6.0",
     "react-responsive": "^10.0.1",
+    "tagcloud": "^1.1.0-1",
     "tailwindcss": "^4.1.16",
     "three": "^0.180.0"
   },

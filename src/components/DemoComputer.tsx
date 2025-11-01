@@ -81,7 +81,7 @@ function DemoComputer({ scale = 1, position = [0, 0, 0], rotation = [0, 0, 0] }:
           <group
             name="4cef7c9d510940d8bf5a9a57aa408b42fbx"
             rotation={[-Math.PI, 0, 0]}
-            scale={0.014}>
+            scale={0.012}>
             <group name="Object_2">
               <group name="RootNode">
                 <group

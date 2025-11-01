@@ -22,7 +22,7 @@ const Project = () => {
 
   return (
     // ⬇️ Reduced top & bottom margins
-    <section className="c-space mt-4 mb-8" id="work">
+    <section className="c-space mt-4 mb-8" id="projects">
       <p className="head-text mb-2">My Work</p>
 
       {/* ⬇️ Removed mt-8, added tighter spacing */}
@@ -94,7 +94,7 @@ const Project = () => {
             <directionalLight position={[10, 10, 5]} intensity={7} />
             <Center>
               <Suspense fallback={<CanvasLoader />}>
-                <group scale={10} position={[-0.6, 0, 0]} rotation={[0, -0.1, 0]}>
+                <group scale={10} position={[-0.6, 1, 0]} rotation={[0, -0.1, 0]}>
                   <DemoComputer />
                 </group>
               </Suspense>

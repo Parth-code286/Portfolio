@@ -4,9 +4,9 @@ import React, { Suspense } from "react";
 import CanvasLoader from "../components/CanvasLoader";
 import HackerRoom from "../components/HackerRoom";
 import { useMediaQuery } from "@react-hook/media-query";
-import Target from "../components/Target";
-import ReactLogo from "../components/ReactLogo";
-import Cube from "../components/Cube";
+// import Target from "../components/Target";
+// import ReactLogo from "../components/ReactLogo";
+// import Cube from "../components/Cube";
 import HackerCamera from "../components/HackerCamera";
 import Button from "../components/Button";
 import { calculateSizes } from "../context";
@@ -31,7 +31,7 @@ const Hero = () => {
     : [-3, 1, 0];      // shifted further left for desktop
 
   return (
-    <section className="min-h-screen w-full flex flex-col relative overflow-hidden bg-black">
+    <section className="min-h-screen w-full flex flex-col relative overflow-hidden bg-black" id="home">
       {/* ✅ Heading Section */}
       <div className="relative z-10 w-full mx-auto flex flex-col sm:pt-36 pt-20 items-center gap-4">
         <h2 className="sm:text-4xl text-2xl font-medium text-white text-center font-generalsans">
@@ -73,11 +73,11 @@ const Hero = () => {
 
             {/* ✅ 3D Elements */}
 {/* ✅ 3D Decorative Models — Responsive Positioning */}
-<group>
+{/* <group>
   {isMobile ? (
     <>
       <Target position={[-5, -1.2, 0]} scale={0.8} rotation={[0, Math.PI / 4, 0]} />
-      <Ring position={[-5, 5, 0]} scale={[0.6, 0.6, 0.6]} />
+      <Cube position={[-5, 5, 0]} scale={[0.6, 0.6, 0.6]} />
       <ReactLogo
         position={[4.5, 5, 0]}
         rotation={[2.6, 0.8, -1.8]}
@@ -135,7 +135,7 @@ const Hero = () => {
       />
     </>
   )}
-</group>
+</group> */}
 
             {/* ✅ Lighting */}
             <ambientLight intensity={1.2} />
